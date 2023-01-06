@@ -8,6 +8,12 @@ namespace GetLinesWithout
   {
     static void Main(string[] arguments)
     {
+      if (arguments.Length == 0)
+      {
+        ShowUsage();
+        return;
+      }
+
       Action<string> Display = Console.WriteLine;
       Display("Application console to get lines from a file without a pattern string");
       var fileName = arguments[0];
@@ -52,6 +58,14 @@ namespace GetLinesWithout
       Display("Press any key to exit:");
       Console.ReadKey();
     }
+
+    private static void ShowUsage()
+    {
+      Action<string> Display = Console.WriteLine;
+      Display("Usage of the application console to get lines from a file with or without a pattern string");
+
+      Display("Press any key to exit:");
+      Console.ReadKey();
+    }
   }
 }
-
