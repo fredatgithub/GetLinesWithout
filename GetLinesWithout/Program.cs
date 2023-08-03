@@ -23,7 +23,8 @@ namespace GetLinesWithout
       var fileLinesResult = new List<string>();
       using (StreamReader sr = new StreamReader(fileName))
       {
-        while (sr.Read() != -1)
+        string line = string.Empty;
+        while (sr.Read() != -1) // while ((line = sr.Read()) != -1)
         {
           fileLines.Add(sr.ReadLine());
         }
